@@ -11,8 +11,6 @@ def convert_speech_to_text():
         try:
             audio = recognizer.listen(source, timeout=5)
             text = recognizer.recognize_vosk(audio)
-            result = json.loads(text)
-            print(result['text'])
             return text
         except sr.UnknownValueError:
             print("Could not understand audio.")
